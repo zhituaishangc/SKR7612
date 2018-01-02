@@ -37,9 +37,9 @@
 	DEF PITCH_COM=(R/-500,500//$85105,$85105,$85043,/WR2/"panel_18_26_chs.png"/"/NC/_N_NC_GD2_ACX/INI[25]"/360,190,202/460,190,60/);全长导程补偿
 	DEF C_INIT=(R/0,360//$85812,$85812,$85042,/WR2/"panel_18_22_chs.png"/"/NC/_N_NC_GD2_ACX/INI[28]"/360,220,202/460,220,60/7);头架在程序结束调整到合适角度
 	DEF Z_INIT=(R/-2000,2000//$85813,$85813,,/WR2/"panel_18_23_chs.png"/"/NC/_N_NC_GD2_ACX/INI[29]"/360,240,202/460,240,60/);内螺纹时台面起始位置
-	DEF VAR20=(I/*0=$85014,1=$85013//$85159,$85159,,/WR2/"panel_18_12_chs.png"/"/NC/_N_NC_GD2_ACX/INI[12]"/360,270,80/405,270,30/);是否有锥度
-	DEF VAR21=(I/-10,10//$85160,,,$85052/WR2/"panel_18_13_chs.png"/"/NC/_N_NC_GD2_ACX/INI[13]"/0,0,0/460,270,85/);锥度分子,默认内螺纹大头往小头磨,外螺纹小头往大头磨
-	DEF VAR22=(I/0,800//$85161,,,/WR2/"panel_18_14_chs.png"/"/NC/_N_NC_GD2_ACX/INI[14]"/0,0,0/505,270,40/);锥度分母
+	;DEF VAR20=(I/*0=$85014,1=$85013//$85159,$85159,,/WR2/"panel_18_12_chs.png"/"/NC/_N_NC_GD2_ACX/INI[12]"/360,270,80/405,270,30/);是否有锥度
+	;DEF VAR21=(I/-10,10//$85160,,,$85052/WR2/"panel_18_13_chs.png"/"/NC/_N_NC_GD2_ACX/INI[13]"/0,0,0/460,270,85/);锥度分子,默认内螺纹大头往小头磨,外螺纹小头往大头磨
+	;DEF VAR22=(I/0,800//$85161,,,/WR2/"panel_18_14_chs.png"/"/NC/_N_NC_GD2_ACX/INI[14]"/0,0,0/505,270,40/);锥度分母
 	DEF VAR23=(I/*0=$85014,1=$85013//$85164,$85164,,/WR2/"panel_18_18_chs.png"/"/NC/_N_NC_GD2_ACX/INI[39]"/360,290,80/405,290,30/);螺旋升角自动计算
 	DEF VAR24=(I/0,45//$85055,,,$85042/WR2/"panel_18_19_chs.png"/"/NC/_N_NC_GD2_ACX/INI[18]"/0,290,0/460,290,75/);度
 	DEF VAR25=(I/0,59//$85056,,,$85053/WR2/"panel_18_20_chs.png"/"/NC/_N_NC_GD2_ACX/INI[19]"/0,290,0/495,290,70/);分
@@ -54,7 +54,7 @@
 	DEF VAR17=(R///$85157,$85157,$85043,/WR1//"$AC_DRF[Z]"/10,310,210/120,310,60/);DRF_Z
 	DEF VAR19=(R///$85158,$85158,,/WR1//"/NC/_N_NC_GD2_ACX/PROCESS[5]"/10,330,210/120,330,60/);当前磨削接触位
 	DEF WHELL_POS_INI=(R///$85169,$85169,,/WR2/"panel_18_27_chs.png"/"/NC/_N_NC_GD2_ACX/PROCESS[14]"/10,350,210/120,350,60/7,4);初始磨削接触位(对刀完成后磨削接触位)
-	DEF para_switch=(I/*0=$85058,1=$85059//$85063,$85063,,/WR2/"panel_18_27_chs.png"/"/NC/_N_NC_GD2_ACX/PARA_LOCK_SWITCH[30]"/210,350,202/310,350,20/);参数锁定开关
+	DEF para_switch=(I/*0=$85058,1=$85059//$85063,$85063,,/WR2/"panel_18_27_chs.png"/"/NC/_N_NC_GD2_ACX/PARA_LOCK_SWITCH[30]"/0,0,0/185,350,20/);参数锁定开关
 	DEF DIAMETER_ADJ=(R///$85174,$85174,$85043,/WR2/"panel_18_29_chs.png"/"/NC/_N_NC_GD2_ACX/GRIND[5]"/360,330,202/460,330,60/);单次中径调整值
 	DEF PianDaoTiaoZheng=(R/-100,100//$85175,$85175,$85043,/WR2/"panel_18_30_chs.png"/"/NC/_N_NC_GD2_ACX/TOOL_SET[43]"/360,350,202/460,350,60/);Z轴偏刀调整
 	DEF VAR14=(R///,,,/WR4//"/Plc/DB4900.DBX0.0"/0,0,0/0,0,0/);面板修整键
@@ -63,8 +63,8 @@
 	DEF VAR45=(I////WR4//"/NC/_N_NC_GD2_ACX/PROCESS[16]"/0,0,0/0,0,0);精简工艺参数/扩展工艺参数
 	DEF QCHECK=(I////WR4//"/Plc/Q113.5"/0,0,0/0,0,0);循环启动Q点检测
 
-        DEF VAR55=(R3///,"X_坐标",,/wr1//"$AA_IM[X]"/225,290,130/280,290,70,/3,/)
-        DEF VAR56=(R3///,"Z_坐标",,/wr1//"$AA_IM[Z]"/225,310,130/280,310,70,/3,/)
+    DEF VAR55=(R3///,"X轴坐标",,/wr1//"$AA_IM[X]"/225,290,100/285,290,60,/3,/)
+    DEF VAR56=(R3///,"Z轴坐标",,/wr1//"$AA_IM[Z]"/225,310,100/285,310,60,/3,/)
 	
 	HS1=($85001,ac7,se3);磨削参数
 	HS2=($85002,ac7,se1);工艺参数
@@ -182,15 +182,6 @@
 		IF Z_INIT.VAL<VAR9.VAL+30
 			Z_INIT.VAL=VAR9.VAL+30
 		ENDIF
-	END_CHANGE
-	CHANGE(VAR29);转换润滑时间的输入值
-		;VAR27=VAR29
-		;VAR28=VAR30*100
-	END_CHANGE
-	
-	CHANGE(VAR30);转换润滑时间的输入值
-		;VAR27=VAR29
-		;VAR28=VAR30*100
 	END_CHANGE
 
 	CHANGE(para_switch)
@@ -1459,67 +1450,12 @@
 	DEF VAR34=(R////WR4//"/NC/_N_NC_GD2_ACX/WHEEL[1]"/0,0,0/0,0,0/);修整轮直径
 	DEF GRIND_TYPE=(R////WR4//"/NC/_N_NC_GD2_ACX/GRIND[1]"/0,0,0/0,0,0/);磨削类型变量的引用
 		
-	HS1=($85380,ac7,se2);"单滚轮"
-	;VS1=($85383,ac7,se1);"三角"
-	;VS2=($85384,ac7,se1);"梯形"
-	VS3=($85385,ac7,se1);"双圆弧"
+	HS4=($85379,ac7,se1);"滚压轮"
 	VS8=($85386,ac7,se1);"返回"
-	PRESS(HS1)
-		IF VAR1.VAL==0
-			LM("MASK4")
-		ELSE
-			IF VAR1.VAL==1
-				LM("MASK12")
-			ENDIF
-		ENDIF
-	END_PRESS
-	PRESS(HS2)
-		IF VAR1.VAL==0
-			IF GRIND_TYPE.VAL==2
-				LM("MASK_WORM_DRESS")
-			ELSE
-				LM("MASK5")
-			ENDIF
-		ELSE
-			IF VAR1.VAL==1
-				LM("MASK13")
-			ENDIF
-		ENDIF
-	END_PRESS
-	PRESS(HS3)
-		IF VAR1.VAL==0
-			IF GRIND_TYPE.VAL==2
-				LM("MASK_WORM_DRESS")
-			ELSE
-				LM("MASK6")
-			ENDIF
-		ELSE
-			IF VAR1.VAL==1
-				IF GRIND_TYPE.VAL==2
-					LM("MASK_WORM_DRESS")
-				ELSE
-					LM("MASK14")
-				ENDIF
-			ENDIF
-		ENDIF
-	END_PRESS
 	PRESS(HS4)
-		IF VAR1.VAL==2
-			LM("MASK11")
-		ELSE
-			IF VAR1.VAL==4
-				IF TYPE.VAL<>1;不是内螺纹
-					LM("MASK16")
-				ELSE
-					IF N_CX_X_TYPE.VAL==0;内螺纹成型前/后
-						LM("MASK17")
-					ELSE
-						LM("MASK19")
-					ENDIF
-				ENDIF
-			ENDIF
-		ENDIF
+		LM("MASK17")
 	END_PRESS
+
 	PRESS(HS5)
 		LM("MASK15")
 	END_PRESS
@@ -1529,9 +1465,7 @@
 	PRESS(VS2)
 		LM("MASK8")
 	END_PRESS
-	PRESS(VS3)
-		LM("MASK9")
-	END_PRESS
+
 	PRESS(VS8)
 		LM("MASK10")
 	END_PRESS
@@ -1603,7 +1537,6 @@
 		IF VAR1.VAL==0
 			ROLLING_1.WR=4
 			HY_1.WR=4
-			HS4.se=2
 			HS5.se=2
 			VS1.se=1
 			VS2.se=1
@@ -1622,7 +1555,6 @@
 			IF VAR1.VAL==1
 				ROLLING_1.WR=4
 				HY_1.WR=4
-				HS4.se=2
 				HS5.se=2
 				VS1.se=1
 				VS2.se=1
@@ -1644,7 +1576,6 @@
 					VAR12.WR=4
 					ROLLING_1.WR=1
 					HY_1.WR=4
-					HS4.se=1
 					HS5.se=2
 					HS1.se=2
 					HS2.se=2
@@ -1659,7 +1590,6 @@
 						VAR12.WR=4
 						ROLLING_1.WR=4
 						HY_1.WR=1
-						HS4.se=2
 						HS5.se=1
 						HS1.se=2
 						HS2.se=2
@@ -1674,7 +1604,6 @@
 							VAR12.WR=4
 							ROLLING_1.WR=1
 							HY_1.WR=4
-							HS4.se=1
 							HS5.se=2
 							HS1.se=2
 							HS2.se=2
@@ -1897,28 +1826,25 @@
 			VAR15.WR=2
 		ENDIF
 //END
-;;;;;;;;;;;;;;;;;;;MASK12:修整参数_XZ单滚轮:panel_12:;;;;;;;;;;;;;;;;
-//M(Mask12/$85380/"panel_12_1_chs.png"/)
-	DEF VAR12=(R/-800,800//$85329,$85329,,$85043/WR2/"panel_12_7_chs.png"/"/NC/_N_NC_GD2_ACX/DRESSER[3]"/330,20,110/440,20,110);回零时砂轮与修整轮中间距
-	DEF para_switch2=(I/*0=$85058,1=$85059//$85063,$85063,,/WR2/"panel_12_7_chs.png"/"/NC/_N_NC_GD2_ACX/PARA_LOCK_SWITCH[11]"/0,0,0/530,20,18/);参数锁定开关
-	DEF VAR11=(R/-2000,2000//$85339,$85342,,$85043/WR2/"panel_12_1_chs.png"/"/NC/_N_NC_GD2_ACX/DRESSER[22]"/330,40,110/440,40,110/);砂轮修整轮中心
-	DEF para_switch=(I/*0=$85058,1=$85059//$85063,$85063,,/WR2/"panel_12_1_chs.png"/"/NC/_N_NC_GD2_ACX/PARA_LOCK_SWITCH[4]"/0,0,0/530,40,18/);参数锁定开关
-	DEF VAR0=(R/0,300//$85390,$85390,,$85043/WR4//""/330,60,110/440,60,110/);滚轮间距
-	DEF VAR1=(R/0,10//$85358,$85358,,$85043/WR2/"panel_12_2_chs.png"/"/NC/_N_NC_GD2_ACX/WHEEL[5]"/330,90,110/440,90,110/);圆弧半径
-	DEF VAR2=(R/0,10//$85356,$85356,,$85043/WR4//"/NC/_N_NC_GD2_ACX/WHEEL[6]"/330,110,110/440,110,110/);右圆弧半径
-	DEF VAR3=(R/-500,500//$85398,$85398,,$85043/WR1/"panel_12_3_chs.png"/"/NC/_N_NC_GD2_ACX/WHEEL[13]"/330,140,110/440,140,110/);初始接触位置
-	DEF VAR4=(R/-500,500//$85393,$85393,,$85043/WR4//"/NC/_N_NC_GD2_ACX/WHEEL[14]"/330,160,110/440,160,110/);初始右端接触位置
-	DEF VAR5=(R/-500,500//$85399,$85399,,$85043/WR2/"panel_12_4_chs.png"/"/NC/_N_NC_GD2_ACX/WHEEL[11]"/330,190,110/440,190,110/);当前接触位置
-	DEF VAR6=(R/-500,500//$85395,$85395,,$85043/WR4//"/NC/_N_NC_GD2_ACX/WHEEL[12]"/330,210,110/440,210,110/);当前右端接触位置
-	DEF VAR7=(R/0,500//$85396,$85396,,$85043/WR2/"panel_12_5_chs.png"/"/NC/_N_NC_GD2_ACX/WHEEL[1]"/330,240,110/440,240,110/);修整轮直径
-	
+
+;;;;;;;;;;;;;;;;;;;MASK17:修整参数_滚压轮X_内_前:panel_17:;;;;;;;;;;;;
+//M(Mask17/$85379/"panel_17_1_chs.png"/)
+	DEF VAR0=(R/-800,800//$85329,$85329,,$85043/WR2/"panel_17_2_chs.png"/"/NC/_N_NC_GD2_ACX/DRESSER[3]"/325,40,110/440,40,110);回零时砂轮与修整轮中间距
+	DEF para_switch1=(I/*0=$85058,1=$85059//$85063,$85063,,/WR2/"panel_17_2_chs.png"/"/NC/_N_NC_GD2_ACX/PARA_LOCK_SWITCH[7]"/0,0,0/530,40,18/);参数锁定开关
+	DEF VAR12=(R/-2000,2000//$85342,$85342,,$85043/WR1//"/NC/_N_NC_GD2_ACX/DRESSER[22]"/325,70,110/440,70,110/);砂轮与修整轮Z中心
+	DEF VAR20=(R/-2000,2000//$85808,$85808,,$85043/WR2/"panel_17_8_chs.png"/"/NC/_N_NC_GD2_ACX/DRESSER[48]"/325,90,115/440,90,110/);砂轮开到修整端面位置
+	DEF para_switch2=(I/*0=$85058,1=$85059//$85063,$85063,,/WR2/"panel_17_8_chs.png"/"/NC/_N_NC_GD2_ACX/PARA_LOCK_SWITCH[8]"/0,0,0/530,90,18/);参数锁定开关
+	DEF VAR21=(R/-100,100//$85809,$85809,,$85043/WR2/"panel_17_9_chs.png"/"/NC/_N_NC_GD2_ACX/DRESSER[49]"/325,110,115/440,110,110/);修整轮齿槽到修整端面距离
+	DEF para_switch3=(I/*0=$85058,1=$85059//$85063,$85063,,/WR2/"panel_17_9_chs.png"/"/NC/_N_NC_GD2_ACX/PARA_LOCK_SWITCH[9]"/0,0,0/530,110,18/);参数锁定开关
+	DEF VAR11=(R/0,80//$85332,$85332,,$85047/WR2/"panel_17_1_chs.png"/"/NC/_N_NC_GD2_ACX/WHEEL[19]"/325,140,110/440,140,110/);滚压轮停留时间
+	DEF VAR2=(R/0,50//$85330,$85330,,$85043/WR2/"panel_17_3_chs.png"/"/NC/_N_NC_GD2_ACX/DRESSER[2]"/325,170,110/440,170,110/);齿高
+	DEF VAR7=(R/0,500//$85396,$85396,,$85043/WR2/"panel_17_5_chs.png"/"/NC/_N_NC_GD2_ACX/WHEEL[1]"/325,190,110/440,190,110/);修整轮直径
+	DEF VAR1=(R/-500,500//$85331,$85331,,$85043/WR1//"/NC/_N_NC_GD2_ACX/WHEEL[13]"/325,260,130/440,260,110/);NC用初始接触
+	DEF VAR3=(R/-500,500//$85398,$85398,,$85043/WR1//"/NC/_N_NC_GD2_ACX/WHEEL[15]"/325,280,130/440,280,110/);初始接触位置
+	DEF VAR5=(R/-500,500//$85399,$85399,,$85043/WR1/"panel_17_4_chs.png"/"/NC/_N_NC_GD2_ACX/WHEEL[11]"/325,300,130/440,300,110/);当前接触位置
 	DEF VAR10=(R////WR4//"/NC/_N_NC_GD2_ACX/DRESSER[24]"/0,0,0/0,0,0/);新砂轮直径
-	DEF GRIND_TYPE=(R////WR4//"/NC/_N_NC_GD2_ACX/GRIND[1]"/0,0,0/0,0,0/);磨削类型变量的引用
 	DEF QCHECK=(I////WR4//"/Plc/Q113.5"/0,0,0/0,0,0);循环启动Q点检测
-	HS1=($85380,ac7,se3);"单滚轮"
-	;VS1=($85383,ac7,se1);"三角"
-	;VS2=($85384,ac7,se1);"梯形"
-	VS3=($85385,ac7,se1);"双圆弧"
+	HS4=($85379,ac7,se3);"滚压轮"
 	VS8=($85386,ac7,se1);"返回"
 	PRESS(HS1)
 		LM("MASK12")
@@ -1930,719 +1856,94 @@
 		LM("MASK14")
 	END_PRESS
 	PRESS(HS4)
-		LM("MASK11")
+		LM("MASK17")
 	END_PRESS
 	PRESS(HS5)
 		LM("MASK15")
 	END_PRESS
-	PRESS(VS1)
-		LM("MASK7")
-	END_PRESS
-	PRESS(VS2)
-		LM("MASK8")
-	END_PRESS
-	PRESS(VS3)
-		LM("MASK9")
-	END_PRESS
 	PRESS(VS8)
 		LM("MASK3")
 	END_PRESS
-	CHANGE(VAR1)
-		VAR2.VAL=VAR1.VAL
+	CHANGE(VAR0)
+		call("UP1")
+	END_CHANGE
+	CHANGE(VAR2)
+		call("UP1")
 	END_CHANGE
 	CHANGE(VAR3)
-		VAR4.VAL=VAR3.VAL
-	END_CHANGE
-	CHANGE(VAR5)
-		VAR6.VAL=VAR5.VAL
-	END_CHANGE
-	CHANGE(VAR12)
-		call("UP3")
-	END_CHANGE
-	CHANGE(VAR7);修整轮转速计算
-		DWHEEL_RPM.VAL=60000*VAR8.VAL/(PI*VAR7.VAL)
-		call("UP3")
-	END_CHANGE
-	
-	CHANGE(VAR8);修整轮转速计算
-		DWHEEL_RPM.VAL=60000*VAR8.VAL/(PI*VAR7.VAL)
-	END_CHANGE
-	
-	CHANGE(para_switch)
 		call("UP1")
+	END_CHANGE
+	CHANGE(VAR7)
+		call("UP1")
+		VAR9.VAL=VAR8.VAL*60000/(PI*VAR7.VAL);修整轮转速计算
+	END_CHANGE
+	CHANGE(VAR8)
+		VAR9.VAL=VAR8.VAL*60000/(PI*VAR7.VAL);修整轮转速计算
+	END_CHANGE
+	CHANGE(VAR20)
+		call("UP2")
+	END_CHANGE
+	CHANGE(VAR21)
+		call("UP2")
+	END_CHANGE
+	CHANGE(para_switch1)
+		call("UP3")
 	END_CHANGE
 	CHANGE(para_switch2)
-		call("UP2")
+		call("UP4")
+	END_CHANGE
+	CHANGE(para_switch3)
+		call("UP5")
 	END_CHANGE
 	CHANGE(QCHECK)
 		IF QCHECK.VAL==1
-			VAR1.WR=1
-			VAR3.WR=1
-			VAR5.WR=1
+			VAR0.WR=1
+			VAR2.WR=1
 			VAR7.WR=1
-			VAR11.WR=1
-			VAR12.WR=1
-			para_switch.WR=1
+			VAR20.WR=1
+			VAR21.WR=1
+			para_switch1.WR=1
 			para_switch2.WR=1
+			para_switch3.WR=1
 		ELSE
-			VAR1.WR=2
-			VAR3.WR=1
-			VAR5.WR=2
+			VAR2.WR=2
 			VAR7.WR=2
-			para_switch.WR=2
+			para_switch1.WR=2
 			para_switch2.WR=2
-			CALL("UP1")
-			CALL("UP2")
+			para_switch3.WR=2
+			CALL("UP3")
+			CALL("UP4")
+			CALL("UP5")
 		ENDIF
 	END_CHANGE
 	SUB(UP1)
-		IF para_switch.VAL==0
-			VAR11.WR=2
-		ELSE
-			VAR11.WR=1
-		ENDIF
+		VAR3.VAL=-(VAR0.VAL+VAR7.VAL/2+VAR10.VAL/2);初始接触位
+		VAR1.VAL=VAR3.VAL+VAR2.VAL;NC用初始接触
 	END_SUB
 	SUB(UP2)
+		VAR12.VAL=VAR20.VAL+VAR21.VAL
+	END_SUB
+	SUB(UP3)
+		IF para_switch1.VAL==0
+			VAR0.WR=2
+		ELSE
+			VAR0.WR=1
+		ENDIF
+	END_SUB
+	SUB(UP4)
 		IF para_switch2.VAL==0
-			VAR12.WR=2
+			VAR20.WR=2
 		ELSE
-			VAR12.WR=1
+			VAR20.WR=1
 		ENDIF
 	END_SUB
-	SUB(UP3)
-		IF GRIND_TYPE.VAL<>1;不是内螺纹
-			VAR3.VAL=-(VAR12.VAL-VAR7.VAL/2-VAR10.VAL/2);初始接触
+	SUB(UP5)
+		IF para_switch3.VAL==0
+			VAR21.WR=2
 		ELSE
-			VAR3.VAL=-(VAR12.VAL+VAR7.VAL/2+VAR10.VAL/2);初始接触位
-		ENDIF
-		VAR4.VAL=VAR3.VAL
-	END_SUB
-//END
-;;;;;;;;;;;;;;;;;;;MASK7:齿形参数_三角:panel_7:;;;;;;;;;;;;;;;;;;;;;
-//M(Mask7/$85383//)
-	DEF VAR0=(R/0,100//$85417,$85417,,$85043/WR2/"panel_7_1_chs.png"/"/NC/_N_NC_GD2_ACX/TRI[1]"/330,30,110/440,30,110/);齿高
-	DEF VAR1=(R/0,90//$85402,$85402,,$85042/WR2/"panel_7_3_chs.png"/"/NC/_N_NC_GD2_ACX/TRI[2]"/330,60,110/440,60,110/);初始左角
-	DEF VAR2=(R/0,90//$85403,$85403,,$85042/WR2/"panel_7_2_chs.png"/"/NC/_N_NC_GD2_ACX/TRI[3]"/330,80,110/440,80,110/);初始右角
-	DEF VAR3=(R/0,50//$85422,$85422,,$85043/WR2/"panel_7_6_chs.png"/"/NC/_N_NC_GD2_ACX/TRI[4]"/330,110,110/440,110,110/);左圆弧
-	DEF VAR4=(R/0,50//$85419,$85419,,$85043/WR4/"panel_7_6_chs.png"/"/NC/_N_NC_GD2_ACX/TRI[5]"/330,130,110/440,130,110/);右圆弧
-	DEF RL=(R/-50,50//$85427,$85427,,$85043/WR2/"panel_7_6_chs.png"/"/NC/_N_NC_GD2_ACX/TRI[12]"/330,130,110/440,130,110/);左圆弧调整
-	DEF RR=(R/-50,50//$85428,$85428,,$85043/WR2/"panel_7_6_chs.png"/"/NC/_N_NC_GD2_ACX/TRI[13]"/330,150,110/440,150,110/);右圆弧调整
-	DEF VAR5=(R/0,50//$85429,$85420,,$85043/WR2/"panel_7_5_chs.png"/"/NC/_N_NC_GD2_ACX/TRI[6]"/330,185,110/440,185,110/);过渡左圆弧
-	DEF VAR6=(R/0,50//$85429,$85421,,$85043/WR2/"panel_7_6_chs.png"/"/NC/_N_NC_GD2_ACX/TRI[7]"/330,205,110/440,205,110/);过渡右圆弧
-	DEF VAR7=(R/0,90//$85445,$85445,,$85042/WR2/"panel_7_3_chs.png"/"/NC/_N_NC_GD2_ACX/TRI[8]"/330,240,110/440,240,110/);调整左角
-	DEF VAR8=(R/0,90//$85446,$85446,,$85042/WR2/"panel_7_2_chs.png"/"/NC/_N_NC_GD2_ACX/TRI[9]"/330,260,110/440,260,110/);调整右角
-	DEF VAR9=(R/0,90//$85447,$85447,,$85042/WR3//"/NC/_N_NC_GD2_ACX/TRI[10]"/330,280,110/440,280,110/);当前左角
-	DEF VAR10=(R/0,90//$85448,$85448,,$85042/WR3//"/NC/_N_NC_GD2_ACX/TRI[11]"/330,300,110/440,300,110/);当前右角
-	DEF VAR20=(I////WR4//"/NC/_N_NC_GD2_ACX/DRESSER[4]"/0,0,0/0,0,0/);修整轮类型
-	DEF VAR21=(R////WR4//"/NC/_N_NC_GD2_ACX/WHEEL[5]"/0,0,0/0,0,0/);单滚轮左圆弧半径
-	DEF VAR22=(R////WR4//"/NC/_N_NC_GD2_ACX/WHEEL[6]"/0,0,0/0,0,0/);单滚轮右圆弧半径
-	DEF VAR23=(R////WR4//"/NC/_N_NC_GD2_ACX/WHEEL[7]"/0,0,0/0,0,0/);双滚轮圆弧半径
-	DEF VAR24=(R////WR4//"/NC/_N_NC_GD2_ACX/WHEEL[8]"/0,0,0/0,0,0/);双滚轮右圆弧半径
-	DEF VAR25=(R////WR4//"/NC/_N_NC_GD2_ACX/WHEEL[9]"/0,0,0/0,0,0/);方滚轮左圆弧半径
-	DEF VAR26=(R////WR4//"/NC/_N_NC_GD2_ACX/WHEEL[10]"/0,0,0/0,0,0/);方滚轮右圆弧半径
-	
-	DEF QCHECK=(I////WR4//"/Plc/Q113.5"/0,0,0/0,0,0);循环启动Q点检测
-	DEF WARE=(I////WR4//"/NC/_N_NC_GD2_ACX/DRESSER[1]"/0,0,0/0,0,0/);修整器
-	HS1=($85380,ac7,se2);"单滚轮"
-	VS1=($85383,ac7,se3);"三角"
-	VS2=($85384,ac7,se1);"梯形"
-	VS3=($85385,ac7,se1);"双圆弧"
-	VS8=($85386,ac7,se1);"返回"
-	PRESS(HS1)
-		IF WARE.VAL==0
-			LM("MASK4")
-		ELSE
-			IF WARE.VAL==1
-				LM("MASK12")
-			ENDIF
-		ENDIF
-	END_PRESS
-	PRESS(HS2)
-		IF WARE.VAL==0
-			LM("MASK5")
-		ELSE
-			IF WARE.VAL==1
-				LM("MASK13")
-			ENDIF
-		ENDIF
-	END_PRESS
-	PRESS(HS3)
-		IF WARE.VAL==0
-			LM("MASK6")
-		ELSE
-			IF WARE.VAL==1
-				LM("MASK14")
-			ENDIF
-		ENDIF
-	END_PRESS
-	PRESS(HS4)
-		LM("MASK11")
-	END_PRESS
-	PRESS(HS5)
-		LM("MASK15")
-	END_PRESS
-	PRESS(VS1)
-		LM("MASK7")
-	END_PRESS
-	PRESS(VS2)
-		LM("MASK8")
-	END_PRESS
-	PRESS(VS3)
-		LM("MASK9")
-	END_PRESS
-	PRESS(VS8)
-		LM("MASK3")
-	END_PRESS
-	CHANGE(VAR20)
-		call("UP1")
-	END_CHANGE
-	CHANGE(VAR1)
-		call("UP2")
-	END_CHANGE
-	CHANGE(VAR2)
-		call("UP2")
-	END_CHANGE
-	
-	CHANGE(VAR3)
-		VAR4.VAL=VAR3.VAL;齿底右圆弧=齿底左圆弧
-	END_CHANGE
-	CHANGE(VAR7)
-		call("UP2")
-	END_CHANGE
-	CHANGE(VAR8)
-		call("UP2")
-	END_CHANGE
-	CHANGE(VAR5)
-		call("UP3")
-	END_CHANGE
-	CHANGE(VAR6)
-		call("UP3")
-	END_CHANGE
-	CHANGE(QCHECK)
-		IF QCHECK.VAL==1
-			VAR0.WR=1
-			VAR1.WR=1
-			VAR2.WR=1
-			VAR3.WR=1
-			VAR4.WR=4
-			VAR5.WR=1
-			VAR6.WR=1
-			VAR7.WR=1
-			VAR8.WR=1
-		ELSE
-			VAR0.WR=2
-			VAR1.WR=2
-			VAR2.WR=2
-			VAR3.WR=2
-			VAR4.WR=4
-			VAR5.WR=2
-			VAR6.WR=2
-			VAR7.WR=2
-			VAR8.WR=2
-		ENDIF
-	END_CHANGE	
-	
-	SUB(UP1)
-		IF VAR20.VAL==0
-			HS1.se=1
-			HS2.se=2
-			HS3.se=2
-		ELSE
-			IF VAR20.VAL==1
-				HS1.se=2
-				HS2.se=1
-				HS3.se=2
-			ELSE
-				IF VAR20.VAL==2
-					HS1.se=2
-					HS2.se=2
-					HS3.se=1
-				ENDIF
-			ENDIF
+			VAR21.WR=1
 		ENDIF
 	END_SUB
-	SUB(UP2)
-		VAR9.VAL=VAR1.VAL+VAR7.VAL
-		VAR10.VAL=VAR2.VAL+VAR8.VAL
-	END_SUB
-	SUB(UP3)
-		IF VAR20.VAL==0
-			IF VAR5.VAL<VAR21.VAL
-				VAR5.VAL=VAR21.VAL
-			ENDIF
-			IF VAR6.VAL<VAR22.VAL
-				VAR6.VAL=VAR22.VAL
-			ENDIF
-		ELSE
-			IF VAR20.VAL==1
-				IF VAR5.VAL<VAR23.VAL
-					VAR5.VAL=VAR23.VAL
-				ENDIF
-				IF VAR6.VAL<VAR24.VAL
-					VAR6.VAL=VAR24.VAL
-				ENDIF
-			ELSE
-				IF VAR20.VAL==2
-					IF VAR5.VAL<VAR25.VAL
-						VAR5.VAL=VAR25.VAL
-					ENDIF
-					IF VAR6.VAL<VAR26.VAL
-						VAR6.VAL=VAR26.VAL
-					ENDIF
-				ENDIF
-			ENDIF
-		ENDIF
-	END_SUB
-//END
-;;;;;;;;;;;;;;;;;;;MASK8:齿形参数_梯形:panel_8:;;;;;;;;;;;;;;;;;;;;;
-//M(Mask8/$85384/"panel_8_1_chs.png"/)
-	DEF VAR0=(R/0,100//$85417,$85417,,$85043/WR2/"panel_8_1_chs.png"/"/NC/_N_NC_GD2_ACX/TRAP[1]"/330,30,110/440,30,110/);齿高
-	DEF VAR12=(R/0,100//$85423,$85423,,$85043/WR2/"panel_8_2_chs.png"/"/NC/_N_NC_GD2_ACX/TRAP[2]"/330,50,110/440,50,110/);齿根高度
-	DEF VAR7=(R/0,200//$85416,$85416,,$85043/WR2/"panel_8_9_chs.png"/"/NC/_N_NC_GD2_ACX/INI[5]"/330,80,110/440,80,110/);螺距
-	DEF VAR3=(R/0,50//$85418,$85418,,$85043/WR2/"panel_8_5_chs.png"/"/NC/_N_NC_GD2_ACX/TRAP[5]"/330,110,110/440,110,110/);齿底左圆弧
-	DEF VAR4=(R/0,50//$85419,$85419,,$85043/WR2/"panel_8_6_chs.png"/"/NC/_N_NC_GD2_ACX/TRAP[6]"/330,130,110/440,130,110/);齿底右圆弧
-	DEF VAR5=(R/0,50//$85420,$85420,,$85043/WR2/"panel_8_7_chs.png"/"/NC/_N_NC_GD2_ACX/TRAP[7]"/330,160,110/440,160,110/);过渡左圆弧
-	DEF VAR6=(R/0,50//$85421,$85421,,$85043/WR2/"panel_8_8_chs.png"/"/NC/_N_NC_GD2_ACX/TRAP[8]"/330,180,110/440,180,110/);过渡右圆弧
-	
-	DEF VAR1=(R/0,90//$85402,$85402,,$85042/WR2/"panel_8_3_chs.png"/"/NC/_N_NC_GD2_ACX/TRAP[3]"/330,210,110/440,210,110/);初始左角
-	DEF VAR2=(R/0,90//$85403,$85403,,$85042/WR2/"panel_8_4_chs.png"/"/NC/_N_NC_GD2_ACX/TRAP[4]"/330,230,110/440,230,110/);初始右角
-	DEF VAR8=(R/0,90//$85445,$85445,,$85042/WR2/"panel_8_3_chs.png"/"/NC/_N_NC_GD2_ACX/TRAP[10]"/330,250,110/440,250,110/);调整左角
-	DEF VAR9=(R/0,90//$85446,$85446,,$85042/WR2/"panel_8_4_chs.png"/"/NC/_N_NC_GD2_ACX/TRAP[11]"/330,270,110/440,270,110/);调整右角
-	DEF VAR10=(R/0,90//$85447,$85447,,$85042/WR1/"panel_8_3_chs.png"/"/NC/_N_NC_GD2_ACX/TRAP[12]"/330,290,110/440,290,110/);当前左角
-	DEF VAR11=(R/0,90//$85448,$85448,,$85042/WR1/"panel_8_4_chs.png"/"/NC/_N_NC_GD2_ACX/TRAP[13]"/330,310,110/440,310,110/);当前右角
-	DEF VAR20=(I////WR4//"/NC/_N_NC_GD2_ACX/DRESSER[4]"/0,0,0/0,0,0/);修整轮
-	DEF VAR21=(R////WR4//"/NC/_N_NC_GD2_ACX/WHEEL[5]"/0,0,0/0,0,0/);圆弧半径
-	DEF VAR22=(R////WR4//"/NC/_N_NC_GD2_ACX/WHEEL[6]"/0,0,0/0,0,0/);右圆弧半径
-	DEF VAR23=(R////WR4//"/NC/_N_NC_GD2_ACX/WHEEL[7]"/0,0,0/0,0,0/);圆弧半径
-	DEF VAR24=(R////WR4//"/NC/_N_NC_GD2_ACX/WHEEL[8]"/0,0,0/0,0,0/);右圆弧半径
-	DEF VAR25=(R////WR4//"/NC/_N_NC_GD2_ACX/WHEEL[9]"/0,0,0/0,0,0/);圆弧半径
-	DEF VAR26=(R////WR4//"/NC/_N_NC_GD2_ACX/WHEEL[10]"/0,0,0/0,0,0/);右圆弧半径
-	
-	DEF QCHECK=(I////WR4//"/Plc/Q113.5"/0,0,0/0,0,0);循环启动Q点检测
-	DEF WARE=(I////WR4//"/NC/_N_NC_GD2_ACX/DRESSER[1]"/0,0,0/0,0,0/);修整器
-	HS1=($85380,ac7,se2);"单滚轮"
-	VS1=($85383,ac7,se1);"三角"
-	VS2=($85384,ac7,se3);"梯形"
-	VS3=($85385,ac7,se1);"双圆弧"
-	VS8=($85386,ac7,se1);"返回"
-	PRESS(HS1)
-		IF WARE.VAL==0
-			LM("MASK4")
-		ELSE
-			IF WARE.VAL==1
-				LM("MASK12")
-			ENDIF
-		ENDIF
-	END_PRESS
-	PRESS(HS2)
-		IF WARE.VAL==0
-			LM("MASK5")
-		ELSE
-			IF WARE.VAL==1
-				LM("MASK13")
-			ENDIF
-		ENDIF
-	END_PRESS
-	PRESS(HS3)
-		IF WARE.VAL==0
-			LM("MASK6")
-		ELSE
-			IF WARE.VAL==1
-				LM("MASK14")
-			ENDIF
-		ENDIF
-	END_PRESS
-	PRESS(HS4)
-		LM("MASK11")
-	END_PRESS
-	PRESS(HS5)
-		LM("MASK15")
-	END_PRESS
-	PRESS(VS1)
-		LM("MASK7")
-	END_PRESS
-	PRESS(VS2)
-		LM("MASK8")
-	END_PRESS
-	PRESS(VS3)
-		LM("MASK9")
-	END_PRESS
-	PRESS(VS8)
-		LM("MASK3")
-	END_PRESS
-	CHANGE(VAR20)
-		call("UP1")
-	END_CHANGE
-	CHANGE(VAR1)
-		call("UP2")
-	END_CHANGE
-	CHANGE(VAR2)
-		call("UP2")
-	END_CHANGE
-	CHANGE(VAR8)
-		call("UP2")
-	END_CHANGE
-	CHANGE(VAR9)
-		call("UP2")
-	END_CHANGE
-	CHANGE(VAR5)
-		call("UP3")
-	END_CHANGE
-	CHANGE(VAR6)
-		call("UP3")
-	END_CHANGE
-	CHANGE(QCHECK)
-		IF QCHECK.VAL==1
-			VAR0.WR=1
-			VAR1.WR=1
-			VAR2.WR=1
-			VAR3.WR=1
-			VAR4.WR=1
-			VAR5.WR=1
-			VAR6.WR=1
-			VAR7.WR=1
-			VAR8.WR=1
-			VAR9.WR=1
-			VAR12.WR=1
-		ELSE
-			VAR0.WR=2
-			VAR1.WR=2
-			VAR2.WR=2
-			VAR3.WR=2
-			VAR4.WR=2
-			VAR5.WR=2
-			VAR6.WR=2
-			VAR7.WR=2
-			VAR8.WR=2
-			VAR9.WR=2
-			VAR12.WR=2
-		ENDIF
-	END_CHANGE	
-	
-	SUB(UP1)
-		IF VAR20.VAL==0
-			HS1.se=1
-			HS2.se=2
-			HS3.se=2
-		ELSE
-			IF VAR20.VAL==1
-				HS1.se=2
-				HS2.se=1
-				HS3.se=2
-			ELSE
-				IF VAR20.VAL==2
-					HS1.se=2
-					HS2.se=2
-					HS3.se=1
-				ENDIF
-			ENDIF
-		ENDIF
-	END_SUB
-	SUB(UP2)
-		VAR10.VAL=VAR1.VAL+VAR8.VAL
-		VAR11.VAL=VAR2.VAL+VAR9.VAL
-	END_SUB
-	SUB(UP3)
-		IF VAR20.VAL==0
-			IF VAR5.VAL<VAR21.VAL
-				VAR5.VAL=VAR21.VAL
-			ENDIF
-			IF VAR6.VAL<VAR22.VAL
-				VAR6.VAL=VAR22.VAL
-			ENDIF
-		ELSE
-			IF VAR20.VAL==1
-				IF VAR5.VAL<VAR23.VAL
-					VAR5.VAL=VAR23.VAL
-				ENDIF
-				IF VAR6.VAL<VAR24.VAL
-					VAR6.VAL=VAR24.VAL
-				ENDIF
-			ELSE
-				IF VAR20.VAL==2
-					IF VAR5.VAL<VAR25.VAL
-						VAR5.VAL=VAR25.VAL
-					ENDIF
-					IF VAR6.VAL<VAR26.VAL
-						VAR6.VAL=VAR26.VAL
-					ENDIF
-				ENDIF
-			ENDIF
-		ENDIF
-	END_SUB
-//END
-;;;;;;;;;;;;;;;;;;;MASK9:齿形参数_双圆弧:panel_9:;;;;;;;;;;;;;;;;;;;
-//M(Mask9/$85385/"panel_9_1_chs.png"/)
-	;DEF VAR0=(R/0,200//$85430,$85430,,$85043/WR2/"panel_9_1_chs.png"/"/NC/_N_NC_GD2_ACX/DARC[2]"/330,30,110/440,30,110/);外圆直径
-	;DEF VAR1=(R/0,200//$85431,$85431,,$85043/WR2/"panel_9_2_chs.png"/"/NC/_N_NC_GD2_ACX/DARC[3]"/330,60,110/440,60,110/);公称直径
-	;DEF VAR2=(R/0,50//$85440,$85440,,$85043/WR2/"panel_9_3_chs.png"/"/NC/_N_NC_GD2_ACX/DARC[12]"/330,80,110/440,80,110/);过渡圆弧半径
-	DEF VAR3=(R/0,90//$85433,$85433,,$85042/WR2/"panel_9_4_chs.png"/"/NC/_N_NC_GD2_ACX/DARC[5]"/350,30,125/470,30,110/);接触角
-	DEF VAR4=(R/0,50//$85432,$85432,,$85043/WR2/"panel_9_5_chs.png"/"/NC/_N_NC_GD2_ACX/DARC[4]"/350,50,125/470,50,110/);钢球直径
-	DEF VAR5=(R/0,50//$85434,$85434,,$85043/WR2/"panel_9_6_chs.png"/"/NC/_N_NC_GD2_ACX/DARC[6]"/350,80,125/470,80,110/);初始左滚道
-	DEF VAR6=(R/0,50//$85435,$85435,,$85043/WR2/"panel_9_7_chs.png"/"/NC/_N_NC_GD2_ACX/DARC[7]"/350,100,125/470,100,110/);初始右滚道
-	DEF VAR9=(R/0,50//$85438,$85438,,$85043/WR1//"/NC/_N_NC_GD2_ACX/DARC[10]"/350,120,125/470,120,110/);当前左滚道
-	DEF VAR10=(R/0,50//$85439,$85439,,$85043/WR1//"/NC/_N_NC_GD2_ACX/DARC[11]"/350,140,125/470,140,110/);当前右滚道
-	DEF VAR7=(R/-10,50//$85436,$85436,,$85043/WR2/"panel_9_8_chs.png"/"/NC/_N_NC_GD2_ACX/DARC[8]"/350,160,125/470,160,110/);调整左滚道
-	DEF VAR8=(R/-10,50//$85437,$85437,,$85043/WR2/"panel_9_9_chs.png"/"/NC/_N_NC_GD2_ACX/DARC[9]"/350,180,125/470,180,110/);调整右滚道
-	DEF VAR11=(R///$85441,$85441,,$85043/WR4//"/NC/_N_NC_GD2_ACX/DARC[21]"/20,270,150/160,270,110/);原始左滚道水平偏心
-	DEF VAR12=(R///$85442,$85442,,$85043/WR4//"/NC/_N_NC_GD2_ACX/DARC[22]"/20,290,150/160,290,110/);原始右滚道水平偏心
-	DEF VAR13=(R///$85443,$85443,,$85043/WR4//"/NC/_N_NC_GD2_ACX/DARC[23]"/20,310,150/160,310,110/);原始左滚道垂直偏心
-	DEF VAR14=(R///$85444,$85444,,$85043/WR4//"/NC/_N_NC_GD2_ACX/DARC[24]"/20,330,150/160,330,110/);原始右滚道垂直偏心
-	DEF VAR15=(R///$85449,$85449,,$85043/WR2/"panel_9_11_chs.png"/"/NC/_N_NC_GD2_ACX/DARC[17]"/320,270,150/470,270,110/);左滚道水平偏心调整
-	DEF VAR16=(R///$85450,$85450,,$85043/WR2/"panel_9_10_chs.png"/"/NC/_N_NC_GD2_ACX/DARC[18]"/320,290,150/470,290,110/);右滚道水平偏心调整
-	DEF VAR17=(R///$85451,$85451,,$85043/WR2/"panel_9_13_chs.png"/"/NC/_N_NC_GD2_ACX/DARC[19]"/320,310,150/470,310,110/);左滚道垂直偏心调整
-	DEF VAR18=(R///$85452,$85452,,$85043/WR2/"panel_9_12_chs.png"/"/NC/_N_NC_GD2_ACX/DARC[20]"/320,330,150/470,330,110/);右滚道垂直偏心调整
-	
-    DEF VAR31=(R///$85453,$85453,,$85043/WR1/"panel_9_11_chs.png"/"/NC/_N_NC_GD2_ACX/DARC[13]"/20,270,150/160,270,110/);当前左滚道水平偏心
-	DEF VAR32=(R///$85454,$85454,,$85043/WR1/"panel_9_10_chs.png"/"/NC/_N_NC_GD2_ACX/DARC[14]"/20,290,150/160,290,110/);当前右滚道水平偏心
-	DEF VAR33=(R///$85455,$85455,,$85043/WR1/"panel_9_13_chs.png"/"/NC/_N_NC_GD2_ACX/DARC[15]"/20,310,150/160,310,110/);当前左滚道垂直偏心
-	DEF VAR34=(R///$85456,$85456,,$85043/WR1/"panel_9_12_chs.png"/"/NC/_N_NC_GD2_ACX/DARC[16]"/20,330,150/160,330,110/);当前右滚道垂直偏心
-	
-	DEF VAR20=(I////WR4//"/NC/_N_NC_GD2_ACX/DRESSER[4]"/0,0,0/0,0,0/);修整轮
-	DEF VAR21=(R////WR4//"/NC/_N_NC_GD2_ACX/WHEEL[5]"/0,0,0/0,0,0/);圆弧半径
-	DEF VAR22=(R////WR4//"/NC/_N_NC_GD2_ACX/WHEEL[6]"/0,0,0/0,0,0/);右圆弧半径
-	DEF VAR23=(R////WR4//"/NC/_N_NC_GD2_ACX/WHEEL[7]"/0,0,0/0,0,0/);圆弧半径
-	DEF VAR24=(R////WR4//"/NC/_N_NC_GD2_ACX/WHEEL[8]"/0,0,0/0,0,0/);右圆弧半径
-	DEF VAR25=(R////WR4//"/NC/_N_NC_GD2_ACX/WHEEL[9]"/0,0,0/0,0,0/);圆弧半径
-	DEF VAR26=(R////WR4//"/NC/_N_NC_GD2_ACX/WHEEL[10]"/0,0,0/0,0,0/);右圆弧半径
-	DEF VAR30=(R////WR4//"/NC/_N_NC_GD2_ACX/DARC[1]"/0,0,0/0,0,0/);齿高
-	
-	DEF QCHECK=(I////WR4//"/Plc/Q113.5"/0,0,0/0,0,0);循环启动Q点检测
-	DEF WARE=(I////WR4//"/NC/_N_NC_GD2_ACX/DRESSER[1]"/0,0,0/0,0,0/);修整器
-	HS1=($85380,ac7,se2);"单滚轮"
-	;VS1=($85383,ac7,se1);"三角"
-	;VS2=($85384,ac7,se1);"梯形"
-	VS3=($85385,ac7,se3);"双圆弧"
-	VS7=($85457,ac7,se1);"调整量清除"
-	VS8=($85386,ac7,se1);"返回"
-	PRESS(HS1)
-		IF WARE.VAL==0
-			LM("MASK4")
-		ELSE
-			IF WARE.VAL==1
-				LM("MASK12")
-			ENDIF
-		ENDIF
-	END_PRESS
-	PRESS(HS2)
-		IF WARE.VAL==0
-			LM("MASK5")
-		ELSE
-			IF WARE.VAL==1
-				LM("MASK13")
-			ENDIF
-		ENDIF
-	END_PRESS
-	PRESS(HS3)
-		IF WARE.VAL==0
-			LM("MASK6")
-		ELSE
-			IF WARE.VAL==1
-				LM("MASK14")
-			ENDIF
-		ENDIF
-	END_PRESS
-	PRESS(HS4)
-		LM("MASK11")
-	END_PRESS
-	PRESS(HS5)
-		LM("MASK15")
-	END_PRESS
-	PRESS(VS1)
-		LM("MASK7")
-	END_PRESS
-	PRESS(VS2)
-		LM("MASK8")
-	END_PRESS
-	PRESS(VS3)
-		LM("MASK9")
-	END_PRESS
-	
-	PRESS(VS7)
-		VAR7.VAL=0
-		VAR8.VAL=0
-		VAR15.VAL=0
-		VAR16.VAL=0
-		VAR17.VAL=0
-		VAR18.VAL=0
-	END_PRESS
-	PRESS(VS8)
-		LM("MASK3")
-	END_PRESS
-	
-	CHANGE(VAR3)
-		call("UP2")
-	END_CHANGE	
-	
-	CHANGE(VAR4)
-		call("UP1")
-		call("UP2")
-	END_CHANGE
-    CHANGE(VAR5)
-	    VAR30.VAL=VAR5.VAL
-	    VAR9.VAL=VAR5.VAL+VAR7.VAL
-		call("UP2")
-	END_CHANGE	
-	
-	CHANGE(VAR6)
-	    VAR10.VAL=VAR6.VAL+VAR8.VAL
-		call("UP2")
-	END_CHANGE
-	
-	CHANGE(VAR7)
-		VAR9.VAL=VAR5.VAL+VAR7.VAL
-		call("UP2")
-	END_CHANGE
-    CHANGE(VAR8)
-		VAR10.VAL=VAR6.VAL+VAR8.VAL
-		call("UP2")
-	END_CHANGE
-    CHANGE(VAR15)
-		VAR31.VAL=VAR15.VAL+VAR11.VAL
-	END_CHANGE
-    CHANGE(VAR16)
-		VAR32.VAL=VAR16.VAL+VAR12.VAL
-	END_CHANGE	
-	
-	CHANGE(VAR17)
-		VAR33.VAL=VAR17.VAL+VAR13.VAL
-	END_CHANGE
-	
-	CHANGE(VAR18)
-		VAR34.VAL=VAR18.VAL+VAR14.VAL
-	END_CHANGE
-	
-	CHANGE(VAR20)
-		call("UP3")
-	END_CHANGE
-	
-	CHANGE(QCHECK)
-		IF QCHECK.VAL==1
-			VAR0.WR=1
-			VAR1.WR=1
-			VAR2.WR=1
-			VAR3.WR=1
-			VAR4.WR=1
-			VAR5.WR=1
-			VAR6.WR=1
-			VAR7.WR=1
-			VAR8.WR=1
-			VAR15.WR=1
-			VAR16.WR=1
-			VAR17.WR=1
-			VAR18.WR=1
-			VS7.se=2;程序运行期间调整清除键不可用
-		ELSE
-			VAR0.WR=2
-			VAR1.WR=2
-			VAR2.WR=2
-			VAR3.WR=2
-			VAR4.WR=2
-			VAR7.WR=2
-			VAR8.WR=2
-			VAR15.WR=2
-			VAR16.WR=2
-			VAR17.WR=2
-			VAR18.WR=2
-			VS7.se=1
-		ENDIF
-	END_CHANGE
-	
-    SUB(UP1)
-		IF VAR4.VAL==1.588 OR VAR4.VAL==2.381 OR VAR4.VAL==3.175 OR VAR4.VAL==3.969 OR VAR4.VAL==4.763 OR VAR4.VAL==5.953 OR VAR4.VAL==7.144 OR VAR4.VAL==9.525 OR VAR4.VAL==12.7
-			IF VAR3.VAL==45
-				IF VAR4.VAL==1.588
-					VAR5.VAL=0.881
-					VAR6.VAL=0.881
-				ELSE
-					IF VAR4.VAL==2.381
-						VAR5.VAL=1.321
-						VAR6.VAL=1.321
-					ELSE
-						IF VAR4.VAL==3.175
-							VAR5.VAL=1.762
-							VAR6.VAL=1.762
-						ELSE
-							IF VAR4.VAL==3.969
-								VAR5.VAL=2.203
-								VAR6.VAL=2.203
-							ELSE
-								IF VAR4.VAL==4.763
-									VAR5.VAL=2.643
-									VAR6.VAL=2.643
-								ELSE
-									IF VAR4.VAL==5.953
-										VAR5.VAL=3.304
-										VAR6.VAL=3.304
-									ELSE
-										IF VAR4.VAL==7.144
-											VAR5.VAL=3.965
-											VAR6.VAL=3.965
-										ELSE
-											IF VAR4.VAL==9.525
-												VAR5.VAL=5.286
-												VAR6.VAL=5.286
-											ELSE
-												IF VAR4.VAL==12.7
-													VAR5.VAL=7.049
-													VAR6.VAL=7.049
-												ENDIF
-											ENDIF
-										ENDIF
-									ENDIF
-								ENDIF
-							ENDIF
-						ENDIF
-					ENDIF
-				ENDIF
-			ENDIF
-			VAR9.VAL=VAR5.VAL+VAR7.VAL
-			VAR10.VAL=VAR6.VAL+VAR8.VAL
-			VAR5.WR=1
-			VAR6.WR=1
-		ELSE
-			VAR5.WR=2
-			VAR6.WR=2
-			VAR9.VAL=VAR5.VAL+VAR7.VAL
-			VAR10.VAL=VAR6.VAL+VAR8.VAL
-		ENDIF	
-	END_SUB
-	
-    SUB(UP2)
-		IF VAR9.VAL<>0
-			IF VAR10.VAL<>0
-				VAR11.VAL=(VAR5.VAL-VAR4.VAL/2)*SIN(VAR3.VAL*PI/180)
-				VAR12.VAL=(VAR6.VAL-VAR4.VAL/2)*SIN(VAR3.VAL*PI/180)
-				VAR13.VAL=(VAR5.VAL-VAR4.VAL/2)*COS(VAR3.VAL*PI/180)
-				VAR14.VAL=(VAR6.VAL-VAR4.VAL/2)*COS(VAR3.VAL*PI/180)
-				VAR31.VAL=VAR15.VAL+VAR11.VAL
-				VAR32.VAL=VAR16.VAL+VAR12.VAL
-				VAR33.VAL=VAR17.VAL+VAR13.VAL
-				VAR34.VAL=VAR18.VAL+VAR14.VAL
-			ENDIF
-		ENDIF 
-	END_SUB
-	
-	SUB(UP3)
-		IF VAR20.VAL==0
-			HS1.se=1
-			HS2.se=2
-			HS3.se=2
-		ELSE
-			IF VAR20.VAL==1
-				HS1.se=2
-				HS2.se=1
-				HS3.se=2
-			ELSE
-				IF VAR20.VAL==2
-					HS1.se=2
-					HS2.se=2
-					HS3.se=1
-				ENDIF
-			ENDIF
-		ENDIF
-	END_SUB
-	
 //END
 ;;;;;;;;;;;;;;;;;;;MASK10:修整返回:panel_10:;;;;;;;;;;;;;;;;;;;;;;;;
 //M(Mask10/$85022/"panel_3_4_chs.png"/)
@@ -2782,7 +2083,8 @@
 	DEF VAR1=(I/*0=$85081,1=$85080//$85032,$85032,,/WR1,al0,fs2,li0,cb0//"/NC/_N_NC_GD2_ACX/PROCESS[44]"/330,85,100/440,85,60);外圆磨削开关
 	DEF VAR2=(I/*0=$85081,1=$85080//$85034,$85034,,/WR1,al0,fs2,li0,cb0//"/NC/_N_NC_GD2_ACX/PROCESS[46]"/330,137,100/440,137,60);右端面磨削开关
 	DEF VAR3=(I/*0=$85081,1=$85080//$85033,$85033,,/WR1,al0,fs2,li0,cb0//"/NC/_N_NC_GD2_ACX/PROCESS[45]"/330,190,100/440,190,60);左端面磨削开关
-	DEF VAR4=(I/*0=$85081,1=$85080//$85031,$85031,,/WR1,al0,fs2,li0,cb0//"/NC/_N_NC_GD2_ACX/PROCESS[42]"/330,240,100/440,240,60);内螺纹磨削开关
+	DEF VAR5=(I/*0=$85081,1=$85080//$85028,$85028,,/WR1,al0,fs2,li0,cb0//"/NC/_N_NC_GD2_ACX/PROCESS[95]"/320,240,110/440,240,60);外圆台阶磨削开关
+	DEF VAR4=(I/*0=$85081,1=$85080//$85031,$85031,,/WR1,al0,fs2,li0,cb0//"/NC/_N_NC_GD2_ACX/PROCESS[42]"/330,295,100/440,295,60);内螺纹磨削开关
 	
 	;DEF VAR5=(S///,$85067,,/wr1///400,200,200,/);修整开关设置
 	;DEF VAR6=(I/*0=$85014,1=$85013//$85069,$85069,,/WR2//"/NC/_N_NC_GD2_ACX/GRIND[6]"/400,230,100/490,230,30);外圆修整开关
@@ -2799,10 +2101,11 @@
 	HS7=($85017,ac7,se1);外磨修整
 	HS8=($85005,ac7,se1);返回
 	
-	VS3=($85032,ac7,se1);返回
-	VS4=($85034,ac7,se1);返回
-	VS5=($85033,ac7,se1);返回
-	VS6=($85031,ac7,se1);返回
+	VS3=($85032,ac7,se1);外圆
+	VS4=($85034,ac7,se1);右端面
+	VS5=($85033,ac7,se1);左端面
+	VS6=($85028,ac7,se1);台阶
+	VS7=($85031,ac7,se1);内螺纹
 	
 	LOAD
 		IF VAR1.VAL==1
@@ -2815,7 +2118,7 @@
 			VS5.SE=3
 		ENDIF
 		IF VAR4.VAL==1
-			VS6.SE=3
+			VS7.SE=3
 		ENDIF
 	END_LOAD
 	
@@ -2850,12 +2153,22 @@
 	END_PRESS
 	
 	PRESS(VS6)
-		IF VAR4.VAL==0
-			VAR4.VAL=1
+		IF VAR5.VAL==0
+			VAR5.VAL=1
 			VS6.SE=3
 		ELSE
-			VAR4.VAL=0
+			VAR5.VAL=0
 			VS6.SE=1
+		ENDIF	
+	END_PRESS
+	
+	PRESS(VS7)
+		IF VAR4.VAL==0
+			VAR4.VAL=1
+			VS7.SE=3
+		ELSE
+			VAR4.VAL=0
+			VS7.SE=1
 		ENDIF	
 	END_PRESS
 	
@@ -2949,7 +2262,7 @@
 
 	DEF INI_POS=(R///$85071,$85071,,/WR2//"/NC/_N_NC_GD2_ACX/PROCESS[47]"/10,310,130/150,310,60/7,10);外圆初始接触位置	
 	DEF VAR3=(R///$85074,$85074,,/WR1//"/NC/_N_NC_GD2_ACX/PROCESS[21]"/10,330,130/150,330,60/);外圆当前接触位置
-        DEF VAR55=(R3///,"U_坐标",,/wr1//"$AA_IM[U]"/10,280,130/140,280,70,/3,/)
+    DEF VAR55=(R3///,"当前X轴坐标",,/wr1//"$AA_IM[X]"/10,280,130/140,280,70/)
 	
     HS1=($85001,ac7,se1);磨削参数
 	HS2=($85002,ac7,se1);工艺参数
@@ -3204,7 +2517,7 @@
 //END
 ;;;;;;;;;;;;;;;;;;;MASK25:端面磨削参数设置:panel_25:;;;;;;;;;;;;;;;;
 //M(Mask25/$85029/"duanmian.png"/)
-        DEF VAR55=(R3///,"Z_坐标",,/wr1//"$AA_IM[Z]"/40,260,130/160,260,60,/3,/)
+    DEF VAR55=(R3///,"当前Z轴坐标",,/wr1//"$AA_IM[Z]"/40,260,130/160,260,60,/3,/)
 	DEF GONGJIAN_JISHU=(I///$85227,$85227,$85228,/WR2//"/NC/_N_NC_GD2_ACX/INI[99]"/320,240,220/440,240,60/);已加工工件计数
 	DEF JIJIAN_XIUZHENG=(I///$85095,$85095,$85228,/WR2//"/NC/_N_NC_GD2_ACX/INI[100]"/320,260,220/440,260,60/);计件修整设定的件数
 
@@ -3374,6 +2687,9 @@
 	
 	DEF QCHECK=(I////WR4//"/Plc/Q113.5"/0,0,0/0,0,0);循环启动Q点检测
 	DEF TYPE=(I////WR4//"/NC/_N_NC_GD2_ACX/GRIND[1]"/0,0,0/0,0,0/);磨削类型
+	DEF VAR55=(R3///,"当前X轴坐标",,/wr1//"$AA_IM[X]"/10,40,130/100,40,60/3,)
+    DEF VAR56=(R3///,"当前Z轴坐标",,/wr1//"$AA_IM[Z]"/10,60,130/100,60,60,/3,/)
+
 	HS1=($85001,ac7,se1);磨削参数
 	HS2=($85002,ac7,se1);工艺参数
 	HS3=($85003,ac7,se1);修整参数
@@ -3472,6 +2788,9 @@
 	
 	DEF QCHECK=(I////WR4//"/Plc/Q113.5"/0,0,0/0,0,0);循环启动Q点检测
 	DEF TYPE=(I////WR4//"/NC/_N_NC_GD2_ACX/GRIND[1]"/0,0,0/0,0,0/);磨削类型
+	DEF VAR55=(R3///,"当前X轴坐标",,/wr1//"$AA_IM[X]"/10,40,130/100,40,60/3,)
+    DEF VAR56=(R3///,"当前Z轴坐标",,/wr1//"$AA_IM[Z]"/10,60,130/100,60,60,/3,/)
+	
 	HS1=($85001,ac7,se1);磨削参数
 	HS2=($85002,ac7,se1);工艺参数
 	HS3=($85003,ac7,se1);修整参数
