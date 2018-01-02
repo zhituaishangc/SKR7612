@@ -1,0 +1,17 @@
+PROC C_DRESS_INIT_POSITION DISPLOF
+;;**********程序功能**********
+;;修整初始移动位置
+;;***************************
+
+MSG("砂轮架回退到修整位中")
+IF GRIND[0]<>1
+    G1 G90 X=WHEEL[10]+2 F=INI[55]
+ELSE
+    G1 G90 X=WHEEL[10]-2 F=INI[55]
+ENDIF
+C_RESET_ANGLE
+MSG("台面到位中")
+G1 G90 Z=DRESSER[33]+DRESSER[22]/2+5 F=INI[56]
+
+RET
+
