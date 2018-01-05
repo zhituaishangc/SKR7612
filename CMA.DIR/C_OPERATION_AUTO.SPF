@@ -43,6 +43,7 @@ DR2=$AA_MM[C];读取C轴当前角度(DR2)
 MSG("测量工件端面位置")
 ;测量端面坐标DR3
 G94 G91 G1 Z-200 F500 MEAS=1				;工件向右移动,触碰测头停止
+STOPRE
 IF $A_PROBE[1]==0 GOTOB ERROR5
 G94	G91	G1 Z=2										;工件左移2mm
 G94	G91	G1 Z=-10 F=50 MEAS=1			;工件右移，触碰测头停止
