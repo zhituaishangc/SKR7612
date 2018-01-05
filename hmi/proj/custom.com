@@ -1785,8 +1785,8 @@
 	DEF para_switch1=(I/*0=$85058,1=$85059//$85063,$85063,,/WR2/"panel_17_2_chs.png"/"/NC/_N_NC_GD2_ACX/PARA_LOCK_SWITCH[7]"/0,0,0/530,40,18/);参数锁定开关
 	DEF VAR12=(R/-2000,2000//$85342,$85342,,$85043/WR1//"/NC/_N_NC_GD2_ACX/DRESSER[22]"/325,70,110/440,70,110/);砂轮与修整轮Z中心
 	DEF para_switch2=(I/*0=$85058,1=$85059//$85063,$85063,,/WR2/"panel_17_8_chs.png"/"/NC/_N_NC_GD2_ACX/PARA_LOCK_SWITCH[8]"/0,0,0/530,70,18/);锁定修整中心的开关	
-	DEF VAR20=(R/-2000,2000//$85377,$85377,,$85043/WR2/"panel_blank_chs.png"/"/NC/_N_NC_GD2_ACX/DRESSER[48]"/325,90,115/440,90,110/);修整中心调整量
-	DEF para_switch3=(I/*0=$85058,1=$85059//$85063,$85063,,/WR2/"panel_17_9_chs.png"/"/NC/_N_NC_GD2_ACX/PARA_LOCK_SWITCH[9]"/0,0,0/530,90,18/);锁定修整中心调整量的开关
+	;DEF VAR20=(R/-2000,2000//$85377,$85377,,$85043/WR2/"panel_blank_chs.png"/"/NC/_N_NC_GD2_ACX/DRESSER[48]"/325,90,115/440,90,110/);修整中心调整量
+	;DEF para_switch3=(I/*0=$85058,1=$85059//$85063,$85063,,/WR2/"panel_17_9_chs.png"/"/NC/_N_NC_GD2_ACX/PARA_LOCK_SWITCH[9]"/0,0,0/530,90,18/);锁定修整中心调整量的开关
 	DEF VAR11=(R/0,80//$85332,$85332,,$85047/WR2/"panel_17_1_chs.png"/"/NC/_N_NC_GD2_ACX/WHEEL[19]"/325,140,110/440,140,110/);滚压轮停留时间
 	DEF VAR2=(R/0,50//$85330,$85330,,$85043/WR2/"panel_17_3_chs.png"/"/NC/_N_NC_GD2_ACX/DRESSER[2]"/325,170,110/440,170,110/);齿高
 	DEF VAR7=(R/0,500//$85396,$85396,,$85043/WR2/"panel_17_5_chs.png"/"/NC/_N_NC_GD2_ACX/WHEEL[1]"/325,190,110/440,190,110/);修整轮直径
