@@ -2583,7 +2583,7 @@
 			VAR14.WR=2
 			ZXZJ.WR=2
 			VAR15.WR=2
-			VAR16.WR=2
+			VAR16.WR=1
 			;侧面部分
 			CXCS.WR=2
 			CXL.WR=2
