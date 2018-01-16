@@ -9,7 +9,7 @@ G90 G01 X=$AA_SOFTENDN[X]+1 F=2000;螺纹磨砂轮架退回
 MSG("移动到修整位置")
 EXCIRCLE_LINESPEED_DRESS;纯修整,砂轮线速度计算
 M05
-G90 G01 C=40 F=10800;把C固定在一角度,避开卡盘
+G90 G01 C=DRESSER[137] F=10800;把C固定在一角度,避开卡盘
 M38
 G90 G01 X=DRESSER[88]-2 F2000;金刚笔快速到与砂轮外圆接触位置附近
 G01 Z=DRESSER[93] ;Z轴快速到砂轮修整起点
