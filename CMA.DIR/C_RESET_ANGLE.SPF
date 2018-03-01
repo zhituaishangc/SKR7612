@@ -13,11 +13,11 @@ IF INI[16]==1
 		;ENDWHILE
 		G4 F1
 		MSG("螺旋升角置零中")
-		IF INI[20]>=0
+		;IF INI[20]>=0
 			G90 G01 A=-1 F=INI[60]
-		ELSE
-			G90 G01 A=1 F=INI[60]
-		ENDIF
+		;ELSE
+			;G90 G01 A=1 F=INI[60]
+		;ENDIF
 		G4 F0.5
 		G90 G01 A=0 F=INI[60]
 		STOPRE
