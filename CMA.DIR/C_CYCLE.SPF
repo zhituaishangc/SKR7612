@@ -16,7 +16,7 @@ IF INI[75]==1
     M9
     M39
     B_DRESS
-    D_GRIND_POSITION
+    ;D_GRIND_POSITION
     IF DRESSER[6]<>0
         RET
     ENDIF
@@ -54,7 +54,7 @@ IF PROCESS[3]==1
     M9
     M39
     B_DRESS
-    D_GRIND_POSITION
+    ;D_GRIND_POSITION
     PROCESS[3]=0
     IF DRESSER[6]<>0
         RET
