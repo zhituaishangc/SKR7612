@@ -5,7 +5,7 @@ PROC F_DRESSWHEEL_RUN(REAL SPEED) DISPLOF
 ;;***************************
 
 IF (INI[37]==0) OR (INI[37]==2)
-    R298=SPEED
+    R297=SPEED
     G4 F0.2
     M63
 ELSE
