@@ -14,7 +14,7 @@ ELSE
         IF INI[84]==0
             G90 G01 Z=INI[6] F=INI[56]
         ELSE
-            F_ZC_START(INI[7],INI[6],80*INI[5],1)
+            F_ZC_START(INI[7],INI[6],100*INI[5],1)
         ENDIF
     ENDIF
     G90 G01 Z=INI[28] F=INI[56]
