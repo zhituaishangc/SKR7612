@@ -1502,7 +1502,8 @@
 //END
 ;;;;;;;;;;;;;;;;;;;MASK3:修整参数_主界面:panel_3:;;;;;;;;;;;;;;;;;;;;;;;;;
 //M(Mask3/$85022/"panel_3_4_chs.png"/)
-	DEF VAR0=(R///$85366,$85366,,$85043/WR1//"/NC/_N_NC_GD2_ACX/DRESSER[10]"/110,10,110/200,10,110/);累计修整量
+	DEF XIUZEHNGJIAODU=(R///"修砂轮时A轴的角度","修砂轮角度",,$85042/WR2/"panel_blank_chs.png"/"$R[211]"/110,10,150/220,10,110/);修砂轮角度
+	DEF para_switch6=(I/*0=$85058,1=$85059//$85063,$85063,,/WR2/"panel_blank_chs.png"/"/NC/_N_NC_GD2_ACX/PARA_LOCK_SWITCH[15]"/0,0,0/310,10,18/);锁定修砂轮角度的开关
 	DEF VAR1=(I/*0=$85344,1=$85345,2=$85346,3=$85347,4=$85348/4/$85387,,,/WR1//"/NC/_N_NC_GD2_ACX/DRESSER[1]"/0,0,0/335,10,60/);修整器X_Z,修整器,生成文件用
 	DEF VAR2=(I/*0=$85380,1=$85381,2=$85382/0/$85388,,,/WR1//"/NC/_N_NC_GD2_ACX/DRESSER[4]"/0,0,0/440,10,60/);修整轮类型:单滚轮,修整轮类型,生成文件用
 	
@@ -1620,9 +1621,6 @@
 		ENDIF
 		call("UP6")
 	END_CHANGE
-	CHANGE(VAR14)
-		VAR0.VAL=(VAR13.VAL-VAR14.VAL)/2;累计修整量计算
-	END_CHANGE
 
 	CHANGE(VAR30)
 		CALL("UP5")
@@ -1675,6 +1673,14 @@
 			VAR34.WR=2
 		ELSE
 			VAR34.WR=1
+		ENDIF
+	END_CHANGE
+
+	CHANGE(para_switch6)
+		IF para_switch6.VAL==0
+			XIUZEHNGJIAODU.WR=2
+		ELSE
+			XIUZEHNGJIAODU.WR=1
 		ENDIF
 	END_CHANGE
 
