@@ -27,6 +27,7 @@
 	DEF VAR2=(I/*0=$85014,1=$85013//$85162,$85162,,/WR1///100,10,40/140,10,50/);是否修整
 	DEF VAR3=(I/*0=$85014,1=$85013,2=$85013,3=$85013//$85163,$85163,,/WR1///195,10,40/230,10,50/);是否对刀
 	DEF SHOUJIAN=(I/*0=$85082,1=$85083//$85078,,,/WR2/"panel_blank_chs.png"/"/NC/_N_NC_GD2_ACX/TOOL_SET[58]"/0,0,0/270,10,70/);是否是首件工件	
+	DEF para_switch3=(I/*0=$85058,1=$85059//$85063,$85063,,/WR2/"panel_blank_chs.png"/"/NC/_N_NC_GD2_ACX/PARA_LOCK_SWITCH[13]"/0,0,0/345,10,20/);锁定是否首件工件的开关	
 	DEF ISLUOXUANTUICHU=(I/*0=$85178,1=$85179//$85180,,,/WR2/"panel_blank_chs.png"/"/NC/_N_NC_GD2_ACX/INI[85]"/0,0,0/270,30,70/);是否螺旋退出工件		
 	DEF para_switch2=(I/*0=$85058,1=$85059//$85063,$85063,,/WR2/"panel_blank_chs.png"/"/NC/_N_NC_GD2_ACX/PARA_LOCK_SWITCH[12]"/0,0,0/345,30,20/);锁定是否螺旋退出的开关	
 	DEF PIECE_VOLUME=(I/*1=$85167/1/$85170,$85170,,/WR2/"panel_18_17_chs.png"/"/NC/_N_NC_GD2_ACX/INI[27]"/360,10,70/460,10,80/);单件/批量磨削方式选择
@@ -285,6 +286,14 @@
 		ENDIF
 	END_CHANGE
 
+	CHANGE(para_switch3)
+		IF para_switch3.VAL==0
+			SHOUJIAN.WR=2
+		ELSE
+			SHOUJIAN.WR=1
+		ENDIF
+	END_CHANGE
+
 	SUB(UP2)
 		IF QCHECK.VAL==1
 			SCREW_R.WR=1
@@ -302,7 +311,6 @@
 			VAR21.WR=1
 			VAR22.WR=1
 			VAR23.WR=1
-			SHOUJIAN.WR=1
 			IF VAR23.VAL==0
 				VAR24.WR=1
 				VAR25.WR=1
@@ -327,7 +335,6 @@
 			C_INIT.WR=2
 			Z_INIT.WR=2
 			VAR20.WR=2
-			SHOUJIAN.WR=2
 			IF VAR20.VAL==0
 				VAR21.WR=1
 				VAR22.WR=1
@@ -1495,7 +1502,8 @@
 //END
 ;;;;;;;;;;;;;;;;;;;MASK3:修整参数_主界面:panel_3:;;;;;;;;;;;;;;;;;;;;;;;;;
 //M(Mask3/$85022/"panel_3_4_chs.png"/)
-	DEF VAR0=(R///$85366,$85366,,$85043/WR1//"/NC/_N_NC_GD2_ACX/DRESSER[10]"/110,10,110/200,10,110/);累计修整量
+	DEF XIUZEHNGJIAODU=(R///"修砂轮时A轴的角度","修砂轮角度",,$85042/WR2/"panel_blank_chs.png"/"$R[211]"/110,10,150/220,10,110/);修砂轮角度
+	DEF para_switch6=(I/*0=$85058,1=$85059//$85063,$85063,,/WR2/"panel_blank_chs.png"/"/NC/_N_NC_GD2_ACX/PARA_LOCK_SWITCH[15]"/0,0,0/310,10,18/);锁定修砂轮角度的开关
 	DEF VAR1=(I/*0=$85344,1=$85345,2=$85346,3=$85347,4=$85348/4/$85387,,,/WR1//"/NC/_N_NC_GD2_ACX/DRESSER[1]"/0,0,0/335,10,60/);修整器X_Z,修整器,生成文件用
 	DEF VAR2=(I/*0=$85380,1=$85381,2=$85382/0/$85388,,,/WR1//"/NC/_N_NC_GD2_ACX/DRESSER[4]"/0,0,0/440,10,60/);修整轮类型:单滚轮,修整轮类型,生成文件用
 	
@@ -1613,9 +1621,6 @@
 		ENDIF
 		call("UP6")
 	END_CHANGE
-	CHANGE(VAR14)
-		VAR0.VAL=(VAR13.VAL-VAR14.VAL)/2;累计修整量计算
-	END_CHANGE
 
 	CHANGE(VAR30)
 		CALL("UP5")
@@ -1668,6 +1673,14 @@
 			VAR34.WR=2
 		ELSE
 			VAR34.WR=1
+		ENDIF
+	END_CHANGE
+
+	CHANGE(para_switch6)
+		IF para_switch6.VAL==0
+			XIUZEHNGJIAODU.WR=2
+		ELSE
+			XIUZEHNGJIAODU.WR=1
 		ENDIF
 	END_CHANGE
 
@@ -1950,6 +1963,7 @@
 	DEF GRID_TOTAL_ACC=(R///$85222,$85222,$85043,/WR1///30,5,190/120,5,60/);累计磨削总量显示	
 	DEF VAR14=(R///$85098,$85098,$85043,/WR2//"/NC/_N_NC_GD2_ACX/WAIYUAN[5]"/30,25,200/130,25,60/);正常磨削设定磨削总量
 	DEF TUIDAOCAO=(R///$85027,$85027,$85043,/WR2//"/NC/_N_NC_GD2_ACX/WAIYUAN[6]"/350,25,200/450,25,60/);左端面退刀槽宽度
+	DEF para_switch1=(I/*0=$85058,1=$85059//$85063,$85063,,/WR2/"panel_24_0_chs.png"/"/NC/_N_NC_GD2_ACX/PARA_LOCK_SWITCH[14]"/0,0,0/330,25,20/);锁定退刀槽的开关	
 	
 	DEF GRIND_MSG=(R///,$86998,,/WR4//""/30,25,300/0,0,0);DIY_MSG
 	
@@ -2062,6 +2076,14 @@
 		VAR36.VAL=VAR40.VAL*60000/(PI*VAR32.VAL)
 	END_CHANGE
 
+	CHANGE(para_switch1)
+		IF para_switch1.VAL==0
+			TUIDAOCAO.WR=2
+		ELSE
+			TUIDAOCAO.WR=1
+		ENDIF
+	END_CHANGE
+	
 	CHANGE(QCHECK)
 		CALL("Q_DIY_SET")
 	END_CHANGE
