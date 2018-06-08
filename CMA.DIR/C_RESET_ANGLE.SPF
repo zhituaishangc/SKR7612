@@ -4,7 +4,7 @@ PROC C_RESET_ANGLE DISPLOF
 ;;***************************
 
 IF INI[16]==1
-	IF TRUNC($AA_IM[A]*1000)<>0
+	IF TRUNC($AA_IM[A]*1000)<>R211
 		M73
 		G4 F1
 		M35
